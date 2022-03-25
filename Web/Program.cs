@@ -26,6 +26,14 @@ builder.Services.AddScoped<ICategoryManager, CategoryManager>();
 builder.Services.AddScoped<IBlogManager, BlogManager>();
 
 
+builder.Services.ConfigureApplicationCookie(option =>
+{
+    option.LoginPath = "/admin/auth/login";
+    option.AccessDeniedPath = "/admin/auth/login";
+});
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -41,6 +49,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 

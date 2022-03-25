@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kt9X3DueXUyE3krcZMR+K7VGu9E7kHTDNecTacjCQTk=",
+  "Hash": "U13sbStWd39QbvsFy7yDu+C0tnSBBu+cu7SxL9UAhzE=",
   "Source": "Web",
   "BasePath": "_content/Web",
   "Mode": "Default",
@@ -37177,6 +37177,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\upload\\tech_video_03.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\K205TechBlog\\Web\\wwwroot\\files\\6181a833-d742-4b3a-8e6e-293a50c22bd7Wallpaper.webp",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\K205TechBlog\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "files/6181a833-d742-4b3a-8e6e-293a50c22bd7Wallpaper.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\6181a833-d742-4b3a-8e6e-293a50c22bd7Wallpaper.webp"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\K205TechBlog\\Web\\wwwroot\\files\\a420b485-341a-437d-8c90-79bdb7b1e218Wallpaper.webp",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\K205TechBlog\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "files/a420b485-341a-437d-8c90-79bdb7b1e218Wallpaper.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\a420b485-341a-437d-8c90-79bdb7b1e218Wallpaper.webp"
     }
   ]
 }

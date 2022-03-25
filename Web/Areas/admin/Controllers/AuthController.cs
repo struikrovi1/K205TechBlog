@@ -23,6 +23,19 @@ namespace Web.Areas.admin.Controllers
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginVM loginVM)
+        {
+            var user = await _userManager.FindByEmailAsync(loginVM.Email);
+            if (user == null) return View();
+            Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
+            if (!result.Succeeded)
+            {
+                return View();
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
         public IActionResult Register()
         {
             return View();
@@ -66,5 +79,7 @@ namespace Web.Areas.admin.Controllers
             return View();
             
         }
+
+    
     }
 }

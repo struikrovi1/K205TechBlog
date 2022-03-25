@@ -14,5 +14,7 @@ namespace Entities
         public string CommentText { get; set; }
         public bool IsSuccess { get; set; }
         public bool IsDelete { get; set; }
+        public int BlogID { get; set; }
+        public Blog Blog { get; set; }
     }
 }

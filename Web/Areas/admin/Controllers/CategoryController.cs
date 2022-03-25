@@ -1,11 +1,13 @@
 ﻿using Business.Abstract;
 using Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Areas.admin.Controllers
 {
     [Area("admin")]
+    [Authorize]
     public class CategoryController : Controller
     {
         private readonly ICategoryManager _categoryManager;
