@@ -11,5 +11,7 @@ namespace Business.Abstract
     {
         List<Blog> GetAll();
         void Create(Blog blog);
+        Blog GetById(int? id);
+        void Update (Blog blog);
     }
 }
