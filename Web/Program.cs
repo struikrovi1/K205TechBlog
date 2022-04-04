@@ -26,6 +26,8 @@ builder.Services.AddScoped<ICategoryManager, CategoryManager>();
 builder.Services.AddScoped<IBlogManager, BlogManager>();
 
 
+builder.Services.AddScoped<ICommentManager, CommentManager>();
+
 builder.Services.ConfigureApplicationCookie(option =>
 {
     option.LoginPath = "/admin/auth/login";

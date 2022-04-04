@@ -40,6 +40,7 @@ namespace Web.Areas.admin.Controllers
         // GET: BlogController/Create
         public IActionResult Create()
         {
+           
             
             ViewBag.Categories = _categoryManager.GetAll();
             return View();
@@ -76,16 +77,36 @@ namespace Web.Areas.admin.Controllers
         // GET: BlogController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+
+            ViewBag.Categories = _categoryManager.GetAll();
+            return View(_blogManager.GetById(id));
         }
 
         // POST: BlogController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(int id, Blog blog, IFormFile Image, string OldPhoto)
         {
+
+            if (Image != null)
+            {
+                string path = "/files" + Guid.NewGuid() + Image.FileName;
+
+                using (var fileStream = new FileStream(_environment.WebRootPath + path, FileMode.Create))
+                {
+                    Image.CopyToAsync(fileStream);
+
+                };
+                blog.PhotoURL = path;
+            }
+            else
+            {
+                blog.PhotoURL = OldPhoto;
+            }
+
             try
             {
+                _blogManager.Update(blog);
                 return RedirectToAction(nameof(Index));
             }
             catch

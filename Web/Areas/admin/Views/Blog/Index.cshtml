@@ -7,17 +7,18 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class = "form-control" asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+                <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
+          
             <th>
                 @Html.DisplayNameFor(model => model.PhotoURL)
             </th>
@@ -34,29 +35,30 @@
             <th>
                 @Html.DisplayNameFor(model => model.K205UserId)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PublishDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UpdateDate)
-            </th>
+        
+       
+         
             <th></th>
         </tr>
     </thead>
     <tbody>
+
+        @{
+            var count = 0;
+        }
 @foreach (var item in Model) {
+        count++;
         <tr>
+        
+             <td>
+              @count
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
+           
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhotoURL)
+               <img width = "100" src = "@item.PhotoURL"/>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Hit)
@@ -65,25 +67,19 @@
                 @Html.DisplayFor(modelItem => item.SeoURL)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CategoryID)
+                @Html.DisplayFor(modelItem => item.Category.Name)
             </td>
            
             <td>
-                @Html.DisplayFor(modelItem => item.K205UserId)
+                @Html.DisplayFor(modelItem => item.K205User.Name)
             </td>
+           
+         
+         
             <td>
-                @Html.DisplayFor(modelItem => item.ID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PublishDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UpdateDate)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new {  id=item.ID }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.ID}) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
             </td>
         </tr>
 }

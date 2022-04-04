@@ -19,12 +19,20 @@ namespace Web.Controllers
             _blogManager = blogManager;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? pageNo, int? nextPage)
         {
+
+            var blogs = _blogManager.GetAll();
+            decimal blogCount = blogs.Count();
+            decimal PageCount = blogCount / 2;
+            //double PageCount = Convert.ToDouble(blogs.Count)/2;
+            ViewBag.PageSize = Math.Ceiling(PageCount);
+            ViewBag.PageNext = pageNo+1;
+
             HomeVM vm = new()
             {
-                Blogs = _blogManager.GetAll()
-            };
+                Blogs = _blogManager.GetAll(pageNo),
+        };
 
             return View(vm);
         }

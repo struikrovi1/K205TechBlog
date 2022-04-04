@@ -14,7 +14,7 @@ namespace Entities
         public string Description { get; set; }
         public string PhotoURL { get; set; }
         public int Hit { get; set; }
-        public string SeoURL { get; set; }
+        public string? SeoURL { get; set; }
         public int CategoryID { get; set; }
         public Category Category { get; set; }
         public string K205UserId { get; set; }

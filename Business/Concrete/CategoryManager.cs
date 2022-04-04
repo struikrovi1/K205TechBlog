@@ -26,12 +26,29 @@ namespace Business.Concrete
             _context.SaveChanges();
         }
 
+        public void Delete(Category category)
+        {
+            _context.Categories.Remove(category);
+            _context.SaveChanges();
+        }
+
         public List<Category> GetAll()
         {
            var category = _context.Categories.ToList();
             return category;
         }
 
+        public Category GetById(int? id)
+        {
+            var category = _context.Categories.FirstOrDefault(x => x.ID == id);
 
+            return category;
+        }
+
+        public void Update(Category category)
+        {
+            _context.Categories.Update(category);
+            _context.SaveChanges();
+        }
     }
 }
